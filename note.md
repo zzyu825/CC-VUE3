@@ -5,3 +5,11 @@
   - 需要手动安装依赖
   - 不一样的启动命令
 - 详解后续..
+
+# 重大变化
+
+## breaking(截断式)变化
+
+1. 不存在构造函数Vue，提供了createApp
+2. this指向（代理）
+3. optionApi -> compositionApi
