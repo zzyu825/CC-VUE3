@@ -25,3 +25,19 @@ export function fetch() {
 export function save(todos) {
   localStorage.setItem(LOCAL_KEY, JSON.stringify(todos));
 }
+
+/**
+ * 筛选任务
+ * @param {*} todos 任务列表
+ * @param {*} visibility 过滤关键字
+ */
+export function filter(todos, visibility = "all") {
+  if (visibility === "all") {
+    return todos;
+  } else if (visibility === "active") {
+    return todos.filter(it => !it.completed);
+  } else if (visibility === "completed") {
+    return todos.filter(it => it.completed);
+  }
+  throw new Error("invalid visibility value");
+}
